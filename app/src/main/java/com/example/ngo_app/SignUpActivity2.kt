@@ -24,28 +24,20 @@ class SignUpActivity2 : AppCompatActivity() {
             val phoneNumber = binding.phoneNumber.text.toString()
             val email = binding.email.text.toString()
             val password = binding.pwd.text.toString()
-            val username = binding.username.text.toString()
+            val username = binding.userName.text.toString()
 
             val data = Users(name, phoneNumber, email, password,username)
             val database = Firebase.database
             val myRef = database.getReference("Users")
             myRef.child(username).setValue(data)
                 .addOnSuccessListener {
-//                    fname.text?.clear()
-//                    lname.text?.clear()
-//                    uname.text?.clear()
-//                    emails.text?.clear()
-//                    pwd.text?.clear()
-
-
                     Toast.makeText(this, "Register Successfully", Toast.LENGTH_SHORT).show()
+
                 }.addOnFailureListener() {
                     Toast.makeText(this, "Failure ", Toast.LENGTH_SHORT).show()
                 }
-
-
             if (email.isEmpty() || password.isEmpty() || name.isEmpty() || phoneNumber.isEmpty() || username.isEmpty()){
-//                binding.errorText.text = "Please fill all the fields"
+
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -55,7 +47,5 @@ class SignUpActivity2 : AppCompatActivity() {
             val intent = Intent(this, LogIn::class.java)
             startActivity(intent)
         }
-
-
     }
 }
