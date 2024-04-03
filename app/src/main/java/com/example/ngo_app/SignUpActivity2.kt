@@ -24,12 +24,12 @@ class SignUpActivity2 : AppCompatActivity() {
             val phoneNumber = binding.phoneNumber.text.toString()
             val email = binding.email.text.toString()
             val password = binding.pwd.text.toString()
+            val username = binding.username.text.toString()
 
-
-            val data = Users(name, phoneNumber, email, password)
+            val data = Users(name, phoneNumber, email, password,username)
             val database = Firebase.database
             val myRef = database.getReference("Users")
-            myRef.child(phoneNumber).setValue(data)
+            myRef.child(username).setValue(data)
                 .addOnSuccessListener {
 //                    fname.text?.clear()
 //                    lname.text?.clear()
@@ -44,7 +44,7 @@ class SignUpActivity2 : AppCompatActivity() {
                 }
 
 
-            if (email.isEmpty() || password.isEmpty() || name.isEmpty() || phoneNumber.isEmpty()){
+            if (email.isEmpty() || password.isEmpty() || name.isEmpty() || phoneNumber.isEmpty() || username.isEmpty()){
 //                binding.errorText.text = "Please fill all the fields"
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
