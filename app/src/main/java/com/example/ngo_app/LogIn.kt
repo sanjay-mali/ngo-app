@@ -1,6 +1,7 @@
 package com.example.ngo_app
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -11,7 +12,8 @@ import com.google.firebase.database.database
 class LogIn : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogInBinding
-    val database = Firebase.database
+    private val database = Firebase.database
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
@@ -71,6 +73,15 @@ class LogIn : AppCompatActivity() {
 //
 //            }
         }
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("IS_LOGGED_IN", false)
+        if (isLoggedIn){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
 
         binding.signUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity2::class.java)

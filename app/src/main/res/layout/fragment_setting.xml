@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/support"
+            android:layout_width="147dp"
+            android:layout_height="49dp"
+            android:text="@string/support"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            android:background="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.181"
+            tools:ignore="DuplicateIds" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/securityBtn"
+            android:layout_width="160dp"
+            android:layout_height="49dp"
+            android:background="@color/white"
+            android:text="@string/security"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.884"
+            app:layout_constraintStart_toEndOf="@+id/support"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.18" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appointmentBtn"
+            android:layout_width="348dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/appointment"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/securityBtn"
+            app:layout_constraintStart_toStartOf="@+id/support"
+            app:layout_constraintTop_toBottomOf="@+id/support" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/paymentBtn"
+            android:layout_width="348dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:text="@string/my_payment"
+            app:layout_constraintEnd_toEndOf="@+id/appointmentBtn"
+            app:layout_constraintStart_toStartOf="@+id/appointmentBtn"
+            app:layout_constraintTop_toBottomOf="@+id/appointmentBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ratingBtn"
+            android:layout_width="348dp"
+            android:layout_height="59dp"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"
+            android:text="@string/rating_and_feedback"
+            app:layout_constraintEnd_toEndOf="@+id/paymentBtn"
+            app:layout_constraintStart_toStartOf="@+id/paymentBtn"
+            app:layout_constraintTop_toBottomOf="@+id/paymentBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
