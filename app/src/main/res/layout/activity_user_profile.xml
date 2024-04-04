@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile">
+
+    <ImageView
+        android:id="@+id/backToSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+    <TextView
+        android:id="@+id/usernameInProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/itim"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backToSetting"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="413dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="56dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameInProfile" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_profile"
+        android:layout_width="348dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:fontFamily="@font/itim"
+        android:text="@string/edit_profile"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="@+id/divider2"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/all_transactions"
+        android:layout_width="348dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:fontFamily="@font/itim"
+        android:text="@string/all_transaction"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/edit_profile"
+        app:layout_constraintStart_toStartOf="@+id/edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/edit_profile" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/help"
+        android:layout_width="348dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:fontFamily="@font/itim"
+        android:text="@string/help"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/all_transactions"
+        app:layout_constraintStart_toStartOf="@+id/all_transactions"
+        app:layout_constraintTop_toBottomOf="@+id/all_transactions" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout"
+        android:layout_width="348dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:fontFamily="@font/itim"
+        android:text="@string/log_out"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/help"
+        app:layout_constraintStart_toStartOf="@+id/help"
+        app:layout_constraintTop_toBottomOf="@+id/help" />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/itim"
+        android:text="Version 1.1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/logout"
+        app:layout_constraintStart_toStartOf="@+id/logout"
+        app:layout_constraintTop_toBottomOf="@+id/logout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

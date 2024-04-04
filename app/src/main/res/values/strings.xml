@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ngo-app</string>
+    <string name="app_name">UnityFund</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -31,4 +31,8 @@
     <string name="enter_your_password">Enter Your Password</string>
     <string name="continue_with">Continue With</string>
     <string name="enter_username">Enter Username</string>
+    <string name="log_out">Log Out</string>
+    <string name="all_transaction">All Transaction</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="help">Help</string>
 </resources>

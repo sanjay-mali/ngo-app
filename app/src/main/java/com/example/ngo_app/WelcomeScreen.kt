@@ -13,29 +13,39 @@ class WelcomeScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome_screen)
-        startBtn = findViewById(R.id.startBtn)
-        startBtn.setOnClickListener {
-            if (isLoggedIn()) {
-                redirectToHome()
-            } else {
-                onGetStartedClicked(startBtn)
+
+        if (isLoggedIn()) {
+            redirectToHome()
+            finish()
+        }else {
+            // The user is not logged in
+            startBtn = findViewById(R.id.startBtn)
+            startBtn.setOnClickListener {
+                val intent = Intent(this, LogIn::class.java)
+                startActivity(intent)
+                finish()
             }
+
         }
     }
 
     private fun isLoggedIn(): Boolean {
+        // Retrieve login status from SharedPreferences
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         return sharedPreferences.getBoolean("isLoggedIn", false)
     }
 
     private fun redirectToHome() {
+        // Redirect the user to the home page
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish()
+        finish() // Finish current activity to prevent going back to welcome screen
     }
 
     private fun onGetStartedClicked(view: View) {
+        // Redirect the user to the login screen
         val intent = Intent(this, LogIn::class.java)
         startActivity(intent)
+        finish()
     }
 }
