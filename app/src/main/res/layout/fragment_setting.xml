@@ -6,22 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".fragment.SettingFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="400dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/support"
             android:layout_width="147dp"
             android:layout_height="49dp"
             android:background="@color/white"
+            android:fontFamily="@font/itim"
             android:text="@string/support"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintHorizontal_bias="0.143"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.34"
+            app:layout_constraintVertical_bias="0.342"
             tools:ignore="DuplicateIds" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -32,15 +39,14 @@
             android:text="@string/security"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.611"
             app:layout_constraintStart_toEndOf="@+id/support"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.34" />
+            app:layout_constraintVertical_bias="0.347" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/appointmentBtn"
             android:layout_width="348dp"
-            android:layout_height="59dp"
+            android:layout_height="0dp"
             android:layout_marginTop="32dp"
             android:text="@string/appointment"
             android:background="@color/white"
@@ -62,9 +68,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/rating"
             android:layout_width="348dp"
-            android:layout_height="59dp"
-            android:background="@color/white"
+            android:layout_height="0dp"
             android:layout_marginTop="16dp"
+            android:background="@color/white"
             android:text="@string/rating_and_feedback"
             app:layout_constraintEnd_toEndOf="@+id/paymentBtn"
             app:layout_constraintStart_toStartOf="@+id/paymentBtn"
@@ -110,8 +116,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/itim"
-                    android:text="User Name"
                     android:textSize="26sp"
+                    android:text="@string/user_name"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/itim"
-                    android:text="city name"
+                    android:text="@string/city_name"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="@+id/username"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -152,6 +158,53 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             app:layout_constraintVertical_bias="0.428" />
 
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/terms_and_conditions"
+            android:layout_width="350dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/white"
+            android:fontFamily="@font/itim"
+            android:text="@string/terms_and_conditions"
+            app:layout_constraintEnd_toEndOf="@+id/divider3"
+            app:layout_constraintStart_toStartOf="@+id/divider3"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/faqs"
+            android:layout_width="350dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/white"
+            android:fontFamily="@font/itim"
+            android:text="FAQs"
+            app:layout_constraintEnd_toEndOf="@+id/terms_and_conditions"
+            app:layout_constraintStart_toStartOf="@+id/terms_and_conditions"
+            app:layout_constraintTop_toBottomOf="@+id/terms_and_conditions" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/our_teams"
+            android:layout_width="350dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/white"
+            android:fontFamily="@font/itim"
+            android:text="Our Teams"
+            app:layout_constraintEnd_toEndOf="@+id/faqs"
+            app:layout_constraintStart_toStartOf="@+id/faqs"
+            app:layout_constraintTop_toBottomOf="@+id/faqs" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </FrameLayout>

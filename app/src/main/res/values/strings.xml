@@ -35,4 +35,7 @@
     <string name="all_transaction">All Transaction</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="help">Help</string>
+    <string name="user_name">User Name</string>
+    <string name="city_name">city name</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
 </resources>

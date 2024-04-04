@@ -25,8 +25,8 @@ class SettingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding =  FragmentSettingBinding.inflate(inflater, container, false)
+    ): View {
+        _binding = FragmentSettingBinding.inflate(inflater, container, false)
 
         binding.profileBtn.setOnClickListener{
             val intent = Intent(activity, UserProfile::class.java)
@@ -36,6 +36,7 @@ class SettingFragment : Fragment() {
 
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

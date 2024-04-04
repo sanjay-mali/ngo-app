@@ -79,7 +79,6 @@ class LogIn : AppCompatActivity() {
                         val pwd = it.value
                         if(pwd == password)
                         {
-
                             val sIntent = Intent(this,MainActivity::class.java)
                             startActivity(sIntent)
                         }
