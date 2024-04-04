@@ -28,4 +28,7 @@
     <string name="login_to_your_account">Login to Your Account</string>
     <string name="App_name">UnityFund</string>
     <string name="get_started">Get Started</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="continue_with">Continue With</string>
+    <string name="enter_username">Enter Username</string>
 </resources>
