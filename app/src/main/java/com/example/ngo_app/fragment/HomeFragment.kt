@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
         imageSlider.setImageList(imageList)
         imageSlider.setImageList(imageList,scaleType = ScaleTypes.FIT)
 
+
         return binding.root
     }
 }
