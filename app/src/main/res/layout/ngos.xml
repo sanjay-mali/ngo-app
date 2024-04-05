@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <!-- NGO Photo -->
+
+        <!-- NGO Name -->
+
+        <ImageView
+            android:id="@+id/NgoImage"
+            android:layout_width="140dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="178dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher_background" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- NGO Location -->
+
+            <TextView
+                android:id="@+id/NgoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NGO Name"
+                android:textSize="26sp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- NGO Description -->
+            <TextView
+                android:id="@+id/Location"
+                android:layout_width="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Location"
+                android:textColor="#BAB5B5"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/NgoName"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/NgoName"
+                app:layout_constraintTop_toBottomOf="@+id/NgoName" />
+
+            <!-- Buttons -->
+
+
+            <!-- "Know More" Button -->
+
+
+            <!-- "Donate Now" Button -->
+            <TextView
+                android:id="@+id/NgoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Description"
+                android:layout_marginStart="5dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/Location"
+                app:layout_constraintStart_toStartOf="@+id/Location"
+                app:layout_constraintTop_toBottomOf="@+id/Location" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/KnowMoreBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ngocardbtn"
+                android:text="Know More"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/DonateNowBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/NgoDescription"
+                app:layout_constraintVertical_bias="0.5"
+                android:layout_marginStart="5dp"
+                tools:ignore="SmallSp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/DonateNowBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ngocardbtn"
+                android:text="Donate Now"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:layout_margin="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/KnowMoreBtn"
+                app:layout_constraintTop_toBottomOf="@+id/NgoDescription"
+                app:layout_constraintVertical_bias="0.5"
+                tools:ignore="SmallSp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
