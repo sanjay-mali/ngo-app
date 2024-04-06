@@ -54,4 +54,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.1")
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.7")
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation("androidx.fragment:fragment-ktx:1.4.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
 }

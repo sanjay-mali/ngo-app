@@ -29,8 +29,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
 
         val recyclerView = binding.ngoRecyclerView
         val adapter = NgoAdapter(ngoList)
@@ -63,7 +64,7 @@ class HomeFragment : Fragment() {
                 R.drawable.ngo1,
                 "Friends Care Foundation",
                 "Ahmedabad, Gujarat, India",
-                "Friends Care Foundation is a non-profit organization that works"
+                "Friends Care Foundation is a non-profit organization that works..."
                 )
         )
         ngoList.add(
@@ -71,7 +72,7 @@ class HomeFragment : Fragment() {
                 R.drawable.ngo2,
                 "Omkar Foundation Trust",
                 "Ahmedabad, Gujarat",
-                "Omkar Foundation Trust is a non-profit organization that works"
+                "Omkar Foundation Trust is a non-profit organization that works..."
             )
         )
         ngoList.add(
@@ -79,7 +80,7 @@ class HomeFragment : Fragment() {
                 R.drawable.ngo3,
                 "MANAV KARTAVYA NGO",
                 "Ahmedabad, Gujarat",
-                "MANAV KARTAVYA NGO is a non-profit organization that works"
+                "MANAV KARTAVYA NGO is a non-profit organization that works..."
             )
         )
 
