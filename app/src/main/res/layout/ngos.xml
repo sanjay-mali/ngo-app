@@ -88,6 +88,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/ngocardbtn"
                 android:fontFamily="@font/itim"
                 android:text="Know More"
@@ -97,8 +98,6 @@
                 app:layout_constraintEnd_toStartOf="@+id/DonateNowBtn"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/NgoDescription"
-                app:layout_constraintVertical_bias="0.5"
                 tools:ignore="SmallSp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -106,6 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:layout_marginBottom="8dp"
                 android:background="@drawable/ngocardbtn"
                 android:fontFamily="@font/itim"
                 android:text="Donate Now"
@@ -115,8 +115,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/KnowMoreBtn"
-                app:layout_constraintTop_toBottomOf="@+id/NgoDescription"
-                app:layout_constraintVertical_bias="0.5"
                 tools:ignore="SmallSp" />
 
 

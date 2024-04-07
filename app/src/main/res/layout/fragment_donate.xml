@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Donate">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/donateRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        tools:listitem="@layout/fragment_donate" />
 
 </FrameLayout>

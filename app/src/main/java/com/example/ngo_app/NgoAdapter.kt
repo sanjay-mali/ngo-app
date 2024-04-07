@@ -58,9 +58,9 @@ class NgoAdapter(private val ngoList: List<NgoModel>) :
 
         val truncatedDescription = truncateDescription(currentItem.description)
         holder.textViewNGODescription.text = truncatedDescription
-        // Set onClickListeners for buttons if needed
+
+
         holder.buttonKnowMore.setOnClickListener {
-            // Handle "Know More" button click
             val knowMore = Intent(holder.itemView.context, KnowMore::class.java)
             knowMore.putExtra(KnowMore.EXTRA_NGO_NAME, currentItem.name)
             knowMore.putExtra(KnowMore.EXTRA_NGO_DESCRIPTION, currentItem.description)

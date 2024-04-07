@@ -1,5 +1,6 @@
 package com.example.ngo_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -27,6 +28,7 @@ class KnowMore : AppCompatActivity() {
     private val binding: ActivityKnowMoreBinding by lazy {
         ActivityKnowMoreBinding.inflate(layoutInflater)
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -85,15 +87,47 @@ class KnowMore : AppCompatActivity() {
 
         binding.ourWork.setOnClickListener {
             replaceFragment(OurWork())
+            binding.ourWork.background = getDrawable(R.drawable.ngocardbtn)
+            binding.appointment.background = getDrawable(R.drawable.nonselecteditem)
+            binding.events.background = getDrawable(R.drawable.nonselecteditem)
+            binding.donate.background = getDrawable(R.drawable.nonselecteditem)
+            binding.ourWork.setTextColor(getColor(R.color.white))
+            binding.donate.setTextColor(getColor(R.color.black))
+            binding.appointment.setTextColor(getColor(R.color.black))
+            binding.events.setTextColor(getColor(R.color.black))
         }
         binding.donate.setOnClickListener {
             replaceFragment(Donate())
+            binding.ourWork.background = getDrawable(R.drawable.nonselecteditem)
+            binding.appointment.background = getDrawable(R.drawable.nonselecteditem)
+            binding.events.background = getDrawable(R.drawable.nonselecteditem)
+            binding.donate.background = getDrawable(R.drawable.ngocardbtn)
+            binding.ourWork.setTextColor(getColor(R.color.black))
+            binding.donate.setTextColor(getColor(R.color.white))
+            binding.appointment.setTextColor(getColor(R.color.black))
+            binding.events.setTextColor(getColor(R.color.black))
         }
         binding.appointment.setOnClickListener {
             replaceFragment(Appointment())
+            binding.ourWork.background = getDrawable(R.drawable.nonselecteditem)
+            binding.appointment.background = getDrawable(R.drawable.ngocardbtn)
+            binding.events.background = getDrawable(R.drawable.nonselecteditem)
+            binding.donate.background = getDrawable(R.drawable.nonselecteditem)
+            binding.ourWork.setTextColor(getColor(R.color.black))
+            binding.donate.setTextColor(getColor(R.color.black))
+            binding.appointment.setTextColor(getColor(R.color.white))
+            binding.events.setTextColor(getColor(R.color.black))
         }
         binding.events.setOnClickListener {
             replaceFragment(EventLists())
+            binding.ourWork.background = getDrawable(R.drawable.nonselecteditem)
+            binding.appointment.background = getDrawable(R.drawable.nonselecteditem)
+            binding.events.background = getDrawable(R.drawable.ngocardbtn)
+            binding.donate.background = getDrawable(R.drawable.nonselecteditem)
+            binding.ourWork.setTextColor(getColor(R.color.black))
+            binding.donate.setTextColor(getColor(R.color.black))
+            binding.appointment.setTextColor(getColor(R.color.black))
+            binding.events.setTextColor(getColor(R.color.white))
         }
     }
     private fun replaceFragment(fragment: Fragment) {
@@ -102,7 +136,4 @@ class KnowMore : AppCompatActivity() {
             .addToBackStack(null)  // Optional: Add fragment to back stack
             .commit()
     }
-
-
-
 }

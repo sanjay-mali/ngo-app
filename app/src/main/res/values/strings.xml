@@ -55,5 +55,9 @@ Manav Kartavya is not just a committed NGO for helping only underprivileged huma
     <string name="event">EVENT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="donation_name">Help someone who need better places</string>
+    <string name="ngo_name">By Humankind</string>
+    <string name="donate_now">Donate Now</string>
+    <string name="raised_100000">Raised: ₹100000</string>
 
 </resources>
