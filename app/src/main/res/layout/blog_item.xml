@@ -1,0 +1,65 @@
+<!-- item_blog.xml -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/blogCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/blogImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/blogTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Blog Title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/blogDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="Fixed description text. Click Read More to view full content."
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/blogDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Published on: dd MMMM yyyy"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/readMoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/btn"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:textColor="@color/white"
+            android:text="@string/read_more"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
