@@ -55,5 +55,7 @@ dependencies {
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.7")
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation("com.google.android.material:material:<version>")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.11.0")
 
 }
