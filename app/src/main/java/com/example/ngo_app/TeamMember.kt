@@ -1,4 +1,8 @@
 package com.example.ngo_app
 
-class TeamMember {
-}
+data class TeamMember(
+    val name: String,
+    val role: String,
+    val bio: String,
+    val photoResId: Int
+)
