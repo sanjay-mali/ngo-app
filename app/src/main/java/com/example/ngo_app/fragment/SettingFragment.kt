@@ -1,5 +1,6 @@
 package com.example.ngo_app.fragment
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.example.ngo_app.databinding.FragmentSettingBinding
 class SettingFragment : Fragment() {
 
     private var _binding: FragmentSettingBinding? = null
+    private lateinit var sharedPreferences: SharedPreferences
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +31,10 @@ class SettingFragment : Fragment() {
             startActivity(intent)
             activity?.finish()
         }
+
+        sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", 0)
+
+        binding.username.text = sharedPreferences.getString("username", "User")
 
         return binding.root
     }
