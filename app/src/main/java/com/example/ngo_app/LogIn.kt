@@ -64,6 +64,7 @@ class LogIn : AppCompatActivity() {
 
     private fun loginUser() {
         val editor = sharedPreferences.edit()
+        editor.putString("username", binding.uname.text.toString())
         editor.putBoolean("isLoggedIn", true)
         editor.apply()
         redirectToHome()
