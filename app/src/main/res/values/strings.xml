@@ -60,5 +60,32 @@ Manav Kartavya is not just a committed NGO for helping only underprivileged huma
     <string name="donate_now">Donate Now</string>
     <string name="raised_100000">Raised: ₹100000</string>
     <string name="read_more">Read More</string>
+    <string name="version">Version 1.1</string>
+    <string name="terms_conditions_content">
+        Welcome to [Your NGO App]! These terms and conditions outline the rules and regulations for the use of the [Your NGO] Mobile Application.
+        By accessing this application, we assume you accept these terms and conditions. Do not continue to use [Your NGO App] if you do not agree to all of the terms and conditions stated on this page.
+        License
+        Unless otherwise stated, [Your NGO] and/or its licensors own the intellectual property rights for all material on [Your NGO App]. All intellectual property rights are reserved. You may access this from [Your NGO App] for your personal use subjected to restrictions set in these terms and conditions.
+        Restrictions
+        You are specifically restricted from all of the following:
+        Publishing any [Your NGO App] material in any other media
+        Selling, sublicensing, and/or otherwise commercializing any [Your NGO App] material
+        Publicly performing and/or showing any [Your NGO App] material
+        Using [Your NGO App] in any way that is or may be damaging to the app
+        Your Content
+        In these terms and conditions, "Your Content" shall mean any audio, video, text, images, or other material you choose to display on [Your NGO App]. By displaying Your Content, you grant [Your NGO] a non-exclusive, worldwide irrevocable, sub-licensable license to use, reproduce, adapt, publish, translate, and distribute it in any and all media.
+        No warranties
+        [Your NGO App] is provided "as is," with all faults, and [Your NGO] makes no express or implied representations or warranties of any kind related to this application or the materials contained on this application.
+        Limitation of liability
+        In no event shall [Your NGO] or its suppliers be liable for any damages arising out of the use or inability to use [Your NGO App].
+        Indemnification
+        You hereby indemnify to the fullest extent [Your NGO] from and against any and/or all liabilities, costs, demands, causes of action, damages, and expenses arising in any way related to your breach of any of the provisions of these terms.
+        Severability
+        If any provision of these terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.
+        Variation of Terms
+        [Your NGO] is permitted to revise these terms at any time as it sees fit, and by using [Your NGO App] you are expected to review these terms regularly.
+        Governing Law &amp; Jurisdiction
+        These terms will be governed by and interpreted in accordance with the laws of [Your Country], and you submit to the non-exclusive jurisdiction of the state and federal courts located in [Your City] for the resolution of any disputes.
+    </string>
 
 </resources>
