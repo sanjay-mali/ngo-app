@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
-
         val recyclerView = binding.ngoRecyclerView
         val adapter = NgoAdapter(ngoList)
         recyclerView.adapter = adapter

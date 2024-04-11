@@ -22,22 +22,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/itim"
-        android:text="TextView"
+        android:text="User Name"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@+id/backToSetting"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:src="@drawable/profile_avatar" />
 
     <View
         android:id="@+id/divider2"
@@ -107,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/itim"
-        android:text="Version 1.1"
+        android:text="@string/version"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/logout"
         app:layout_constraintStart_toStartOf="@+id/logout"

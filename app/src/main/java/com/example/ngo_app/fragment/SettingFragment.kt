@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.ngo_app.OurTeam
+import com.example.ngo_app.TeamMember
 import com.example.ngo_app.UserProfile
 import com.example.ngo_app.databinding.FragmentSettingBinding
+import com.example.ngo_app.faq_item
 
 class SettingFragment : Fragment() {
 
@@ -26,15 +29,27 @@ class SettingFragment : Fragment() {
     ): View {
         _binding = FragmentSettingBinding.inflate(inflater, container, false)
 
+        sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", 0)
+
+        val username = sharedPreferences.getString("username", "User")
+        binding.username.text = username
+
         binding.profileBtn.setOnClickListener{
             val intent = Intent(activity, UserProfile::class.java)
+            intent.putExtra("username", username)
             startActivity(intent)
             activity?.finish()
         }
 
-        sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", 0)
+        binding.ourTeams.setOnClickListener{
+            val intent = Intent(activity, OurTeam::class.java)
+            startActivity(intent)
+        }
 
-        binding.username.text = sharedPreferences.getString("username", "User")
+        binding.faqs.setOnClickListener{
+            val intent = Intent(activity, faq_item::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }

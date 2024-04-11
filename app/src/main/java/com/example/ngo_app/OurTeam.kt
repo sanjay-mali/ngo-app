@@ -14,7 +14,7 @@ class OurTeam : AppCompatActivity() {
         TeamMember("Jane Smith", "Designer", "Creative Graphic Designer", R.drawable.ngo2),
         TeamMember("Jane Smith", "Designer", "Creative Graphic Designer", R.drawable.ngo3),
         TeamMember("Jane Smith", "Designer", "Creative Graphic Designer", R.drawable.ngo2),
-        // Add more team members as needed
+
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

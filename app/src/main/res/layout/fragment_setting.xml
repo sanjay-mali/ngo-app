@@ -108,30 +108,21 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.521"
                     tools:ignore="RtlHardcoded"
-                    tools:src="@tools:sample/avatars" />
+                    android:scaleType="fitCenter"
+                    tools:src="@drawable/profile_avatar" />
+
 
                 <TextView
                     android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
                     android:fontFamily="@font/itim"
-                    android:textSize="26sp"
                     android:text="@string/user_name"
+                    android:textSize="26sp"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/city"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/itim"
-                    android:text="@string/city_name"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="@+id/username"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/username"
-                    app:layout_constraintTop_toBottomOf="@+id/username" />
 
                 <ImageView
                     android:id="@+id/profile"
