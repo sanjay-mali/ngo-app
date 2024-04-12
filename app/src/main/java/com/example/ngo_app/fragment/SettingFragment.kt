@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ngo_app.OurTeam
+import com.example.ngo_app.RatingAndFeedback
 import com.example.ngo_app.TeamMember
+import com.example.ngo_app.TermsAndCondition
 import com.example.ngo_app.UserProfile
 import com.example.ngo_app.databinding.FragmentSettingBinding
 import com.example.ngo_app.faq_item
@@ -48,6 +50,16 @@ class SettingFragment : Fragment() {
 
         binding.faqs.setOnClickListener{
             val intent = Intent(activity, faq_item::class.java)
+            startActivity(intent)
+        }
+
+        binding.termsAndConditions.setOnClickListener {
+            val intent = Intent(activity, TermsAndCondition::class.java)
+            startActivity(intent)
+        }
+
+        binding.rating.setOnClickListener {
+            val intent = Intent(activity,RatingAndFeedback::class.java)
             startActivity(intent)
         }
 
