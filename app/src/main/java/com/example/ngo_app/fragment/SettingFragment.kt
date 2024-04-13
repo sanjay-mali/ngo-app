@@ -12,6 +12,7 @@ import com.example.ngo_app.AppointmentLists
 import com.example.ngo_app.DatabaseHelper
 import com.example.ngo_app.OurTeam
 import com.example.ngo_app.RatingAndFeedback
+import com.example.ngo_app.Support
 import com.example.ngo_app.TeamMember
 import com.example.ngo_app.TermsAndCondition
 import com.example.ngo_app.UserProfile
@@ -87,6 +88,11 @@ class SettingFragment : Fragment() {
 
         binding.appointmentBtn.setOnClickListener {
             val intent = Intent(activity, AppointmentLists::class.java)
+            startActivity(intent)
+        }
+
+        binding.support.setOnClickListener {
+            val intent = Intent(activity, Support::class.java)
             startActivity(intent)
         }
 
