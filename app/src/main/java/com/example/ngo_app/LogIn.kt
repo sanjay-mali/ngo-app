@@ -5,35 +5,44 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.ngo_app.databinding.ActivityLogInBinding
+import com.example.ngo_app.fragment.HomeFragment
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.database
+import com.google.firestore.v1.Cursor
 
 class LogIn : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogInBinding
     private val database = Firebase.database
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var dbHelper: DatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        dbHelper = DatabaseHelper(this)
+
 
         binding.logInButton.setOnClickListener {
 
-            val username = binding.uname.text.toString()
-            val password = binding.password.text.toString()
+            val email = binding.uname.text.toString().trim()
+            val password = binding.password.text.toString().trim()
 
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                if (dbHelper.checkUser(email, password)) {
+                    loginSuccess(email)
+                } else {
+                    Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                checkUser(username, password)
-                finish()
+                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }
 
             sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
@@ -51,6 +60,15 @@ class LogIn : AppCompatActivity() {
         }
     }
 
+    private fun loginSuccess(email: String) {
+        val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        sharedPrefs.edit().putString("email", email).apply()
+        Log.e("email", "email: $email")
+
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun isLoggedIn(): Boolean {
         return sharedPreferences.getBoolean("isLoggedIn", false)
     }
@@ -64,42 +82,8 @@ class LogIn : AppCompatActivity() {
 
     private fun loginUser() {
         val editor = sharedPreferences.edit()
-        editor.putString("username", binding.uname.text.toString())
         editor.putBoolean("isLoggedIn", true)
         editor.apply()
         redirectToHome()
-    }
-    private fun checkUser(username: String, password: String) {
-        val myRef = database.getReference("Users")
-        myRef.child(username).get().addOnSuccessListener {
-            if (it.exists()){
-                val user = it.child("username").value
-                myRef.child(username).child("password").get().addOnSuccessListener {
-                    if(it.exists())
-                    {
-                        val pwd = it.value
-                        if(pwd == password)
-                        {
-                            val sIntent = Intent(this,MainActivity::class.java)
-                            startActivity(sIntent)
-                        }
-                        else
-                        {
-                            Toast.makeText(this, "Wrong Password", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                    else
-                    {
-                        Toast.makeText(this, "Password not found", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-            else
-            {
-                Toast.makeText(this, "User not found", Toast.LENGTH_SHORT).show()
-            }
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failure to load ", Toast.LENGTH_SHORT).show()
-        }
     }
 }
