@@ -12,34 +12,31 @@ import com.google.firebase.database.database
 class SignUpActivity2 : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignUp2Binding
-    private lateinit var auth: FirebaseAuth
+    private lateinit var dbHelper: DatabaseHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUp2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        auth = FirebaseAuth.getInstance()
+
+        dbHelper = DatabaseHelper(this)
 
         binding.signUpButton.setOnClickListener {
             val name = binding.name.text.toString()
             val phoneNumber = binding.phoneNumber.text.toString()
             val email = binding.email.text.toString()
             val password = binding.pwd.text.toString()
-            val username = binding.userName.text.toString()
 
-            val data = Users(name, phoneNumber, email, password,username)
-            val database = Firebase.database
-            val myRef = database.getReference("Users")
-            myRef.child(username).setValue(data)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Register Successfully", Toast.LENGTH_SHORT).show()
-
-                }.addOnFailureListener() {
-                    Toast.makeText(this, "Failure ", Toast.LENGTH_SHORT).show()
+            if (name.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty() && password.isNotEmpty()) {
+                val result = dbHelper.addUser(name, email, phoneNumber, password)
+                if (result != -1L) {
+                    Toast.makeText(this, "User registered successfully!", Toast.LENGTH_SHORT).show()
+                    val loginIntent = Intent(this, LogIn::class.java)
+                    startActivity(loginIntent)
+                } else {
+                    Toast.makeText(this, "Error registering user", Toast.LENGTH_SHORT).show()
                 }
-            if (email.isEmpty() || password.isEmpty() || name.isEmpty() || phoneNumber.isEmpty() || username.isEmpty()){
-
-                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            } else {
+                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
