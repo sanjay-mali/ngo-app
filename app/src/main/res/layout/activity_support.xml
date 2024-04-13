@@ -1,0 +1,23 @@
+<!-- activity_support.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/supportTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_support"
+        android:textSize="24sp"
+        android:layout_centerInParent="true" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/contactSupportButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact"
+        android:layout_below="@id/supportTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>
