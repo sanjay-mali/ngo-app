@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/usernameInProfile" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/edit_profile"
+        android:id="@+id/editProfileButton"
         android:layout_width="348dp"
         android:layout_height="59dp"
         android:layout_marginTop="16dp"
@@ -72,9 +72,9 @@
         android:fontFamily="@font/itim"
         android:text="@string/all_transaction"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/edit_profile"
-        app:layout_constraintStart_toStartOf="@+id/edit_profile"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile" />
+        app:layout_constraintEnd_toEndOf="@+id/editProfileButton"
+        app:layout_constraintStart_toStartOf="@+id/editProfileButton"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/help"
