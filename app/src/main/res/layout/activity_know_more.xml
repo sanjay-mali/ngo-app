@@ -109,16 +109,7 @@
                 android:text="@string/appointment"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/events"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/nonselecteditem"
-                android:paddingStart="25dp"
-                android:paddingEnd="25dp"
-                android:text="@string/event"
-                android:textColor="@color/black" />
+
 
 
         </LinearLayout>
@@ -143,8 +134,6 @@
                 android:id="@+id/fragmentContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-
-
         </LinearLayout>
     </ScrollView>
 
