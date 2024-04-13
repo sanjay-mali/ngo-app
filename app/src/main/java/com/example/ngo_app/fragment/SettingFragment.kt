@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.ngo_app.AppointmentLists
 import com.example.ngo_app.DatabaseHelper
 import com.example.ngo_app.OurTeam
 import com.example.ngo_app.RatingAndFeedback
@@ -84,7 +85,10 @@ class SettingFragment : Fragment() {
             startActivity(intent)
         }
 
-
+        binding.appointmentBtn.setOnClickListener {
+            val intent = Intent(activity, AppointmentLists::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
     }
