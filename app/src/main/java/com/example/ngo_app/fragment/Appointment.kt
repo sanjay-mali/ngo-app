@@ -12,6 +12,8 @@ import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
 import com.example.ngo_app.AppointmentDataClass
+import com.example.ngo_app.AppointmentDatabaseHelper
+import com.example.ngo_app.DatabaseHelper
 import com.example.ngo_app.R
 import com.example.ngo_app.databinding.FragmentAppointmentBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +31,8 @@ class Appointment() : Fragment() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     private var selectedDate: String = ""
     private var selectedTime: String = ""
+    private lateinit var dbHelper: AppointmentDatabaseHelper
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,8 +45,7 @@ class Appointment() : Fragment() {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
 
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        firebaseDatabase = FirebaseDatabase.getInstance()
+        dbHelper = AppointmentDatabaseHelper(requireContext())
 
         binding.selectDateButton.setOnClickListener {
             showDatePicker()
@@ -53,7 +56,15 @@ class Appointment() : Fragment() {
         }
 
         binding.saveAppointmentButton.setOnClickListener {
-            saveAppointment()
+            val date = binding.selectDateButton.text.toString()
+            val time = binding.selectTimeButton.text.toString()
+            val reason = binding.appointmentReasonEditText.text.toString()
+            if (date.isNotEmpty() && time.isNotEmpty() && reason.isNotEmpty()) {
+                val appointment = AppointmentDataClass(date = date, time = time, reason = reason)
+                saveAppointmentToDatabase(appointment)
+            } else {
+                Toast.makeText(requireContext(), "Please select date, time, and enter reason", Toast.LENGTH_SHORT).show()
+            }
         }
 
 
@@ -98,36 +109,13 @@ class Appointment() : Fragment() {
         )
         timePickerDialog.show()
     }
-    private fun saveAppointment() {
-        val firebaseAuth = FirebaseAuth.getInstance()
-        val currentUser = firebaseAuth.currentUser
-        val userId = currentUser?.uid
 
-        Log.e("userId", userId.toString())
-
-        if (currentUser != null) {
-            // User is authenticated
-            val userId = currentUser.uid
-
-//            if (userId != null) {
-            val appointmentId = UUID.randomUUID().toString()
-            val appointmentRef = firebaseDatabase.reference.child("appointments").child(userId).child(appointmentId)
-
-            val appointmentData = HashMap<String, Any>()
-            appointmentData["date"] = selectedDate
-            appointmentData["time"] = selectedTime
-            // Add more data if needed
-
-            appointmentRef.setValue(appointmentData)
-                .addOnSuccessListener {
-                    // Appointment saved successfully
-                    Toast.makeText(context, "Appointment saved successfully", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { exception ->
-                    // Handle error
-                    Toast.makeText(context, "Error saving appointment: $exception", Toast.LENGTH_SHORT).show()
-                }
+    private fun saveAppointmentToDatabase(appointment: AppointmentDataClass) {
+        val insertedId = dbHelper.addAppointment(appointment)
+        if (insertedId != -1L) {
+            Toast.makeText(requireContext(), "Appointment saved successfully", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "Failed to save appointment", Toast.LENGTH_SHORT).show()
         }
     }
-
 }
