@@ -1,5 +1,7 @@
 <!-- activity_edit_profile.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -8,42 +10,74 @@
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:layout_marginTop="44dp"
+        android:background="@color/white"
+        android:hint="Name"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backToSetting" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextName"
-        android:hint="Email" />
+        android:layout_marginTop="16dp"
+        android:hint="Email"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <EditText
         android:id="@+id/editTextPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextEmail"
-        android:hint="Phone Number" />
+        android:layout_marginTop="16dp"
+        android:hint="Phone Number"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPhoneNumber"
+        android:layout_marginTop="16dp"
         android:hint="Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/editTextPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhoneNumber" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSaveProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn"
         android:gravity="center"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
         android:paddingStart="30dp"
         android:paddingEnd="30dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn"
-        android:text="Save" />
+        android:text="Update Profile"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="@+id/editTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/backToSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

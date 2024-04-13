@@ -62,6 +62,16 @@ class DatabaseHelper(context:Context): SQLiteOpenHelper(context, DATABASE_NAME, 
         cursor?.close()
         return fullName
     }
+    fun updateUser(email: String, fullName: String, newEmail: String, phone: String, newPassword: String) {
+        val db = writableDatabase
+        val values = ContentValues()
+        values.put(KEY_FULL_NAME, fullName)
+        values.put(KEY_EMAIL, newEmail)
+        values.put(KEY_PHONE, phone)
+        values.put(KEY_PASSWORD, newPassword)
+        db.update(TABLE_USERS, values, "$KEY_EMAIL=?", arrayOf(email))
+    }
+
 
 
 }
