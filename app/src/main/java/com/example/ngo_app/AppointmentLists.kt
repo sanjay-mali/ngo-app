@@ -15,7 +15,7 @@ class AppointmentLists : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAppointmentListsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         appointmentAdapter = AppointmentAdapter()
         binding.recyclerViewAppointments.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewAppointments.adapter = appointmentAdapter

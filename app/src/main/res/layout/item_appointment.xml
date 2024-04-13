@@ -5,25 +5,32 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date: "
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/tvDate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Date: "-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvTime"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Time: "-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvReason"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Reason: "-->
+<!--        android:textStyle="bold" />-->
 
     <TextView
-        android:id="@+id/tvTime"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewAppointmentDetails"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Time: "
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvReason"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reason: "
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:padding="8dp"/>
 
 </LinearLayout>
