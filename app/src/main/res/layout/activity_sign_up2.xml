@@ -119,9 +119,9 @@
             android:background="@drawable/btn"
             android:text="@string/sign_up"
             android:textColor="#FFF"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
@@ -185,24 +185,5 @@
                 tools:ignore="DuplicateIds" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/userName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/inputs"
-                android:elevation="5dp"
-                android:hint="@string/enter_username"
-                android:textColor="#000" />
-        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
