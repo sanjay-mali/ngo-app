@@ -1,6 +1,6 @@
 package com.example.ngo_app
 
-data class Appointment(
+data class AppointmentDataClass(
     val title: String = "",
     val date: String = "",
     val time: String = "",

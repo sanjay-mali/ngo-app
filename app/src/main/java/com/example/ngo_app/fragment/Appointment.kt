@@ -1,60 +1,133 @@
 package com.example.ngo_app.fragment
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.TimePicker
+import android.widget.Toast
+import com.example.ngo_app.AppointmentDataClass
 import com.example.ngo_app.R
+import com.example.ngo_app.databinding.FragmentAppointmentBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.Calendar
+import java.util.Locale
+import java.util.UUID
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class Appointment() : Fragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Appointment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Appointment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    private lateinit var binding: FragmentAppointmentBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseDatabase: FirebaseDatabase
+    private var selectedDate: String = ""
+    private var selectedTime: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_appointment, container, false)
+        binding = FragmentAppointmentBinding.inflate(inflater, container, false)
+
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        firebaseDatabase = FirebaseDatabase.getInstance()
+
+        binding.selectDateButton.setOnClickListener {
+            showDatePicker()
+        }
+
+        binding.selectTimeButton.setOnClickListener {
+            showTimePicker()
+        }
+
+        binding.saveAppointmentButton.setOnClickListener {
+            saveAppointment()
+        }
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Appointment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Appointment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun showDatePicker() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = context?.let {
+            DatePickerDialog(
+                it,
+                DatePickerDialog.OnDateSetListener { datePicker: DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+                    selectedDate = "$dayOfMonth/${monthOfYear + 1}/$year"
+                    binding.selectDateButton.text = selectedDate
+                },
+                year,
+                month,
+                dayOfMonth
+            )
+        }
+        datePickerDialog?.show()
     }
+
+    private fun showTimePicker() {
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val minute = calendar.get(Calendar.MINUTE)
+
+        val timePickerDialog = TimePickerDialog(
+            context,
+            TimePickerDialog.OnTimeSetListener { timePicker: TimePicker, hourOfDay: Int, minute: Int ->
+                selectedTime = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minute)
+                binding.selectTimeButton.text = selectedTime
+            },
+            hour,
+            minute,
+            true // 24-hour format
+        )
+        timePickerDialog.show()
+    }
+    private fun saveAppointment() {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth.currentUser
+        val userId = currentUser?.uid
+
+        Log.e("userId", userId.toString())
+
+        if (currentUser != null) {
+            // User is authenticated
+            val userId = currentUser.uid
+
+//            if (userId != null) {
+            val appointmentId = UUID.randomUUID().toString()
+            val appointmentRef = firebaseDatabase.reference.child("appointments").child(userId).child(appointmentId)
+
+            val appointmentData = HashMap<String, Any>()
+            appointmentData["date"] = selectedDate
+            appointmentData["time"] = selectedTime
+            // Add more data if needed
+
+            appointmentRef.setValue(appointmentData)
+                .addOnSuccessListener {
+                    // Appointment saved successfully
+                    Toast.makeText(context, "Appointment saved successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { exception ->
+                    // Handle error
+                    Toast.makeText(context, "Error saving appointment: $exception", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
 }

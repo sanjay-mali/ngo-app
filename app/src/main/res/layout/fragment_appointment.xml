@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Appointment">
+    tools:ignore="ExtraText">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/appointmentTitleEditText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="@string/appointment_title"
+        android:background="@drawable/nonselecteditem"
+        android:padding="12dp"
+        android:gravity="center"
+        android:importantForAutofill="no" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/appointmentReasonEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/appointment_reason"
+        android:textColor="@color/black"
+        android:layout_margin="8dp"
+        android:background="@drawable/nonselecteditem"
+        android:gravity="center"
+        android:layout_below="@id/appointmentTitleEditText"
+        android:padding="12dp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/selectDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appointmentReasonEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nonselecteditem"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="@string/select_date"
+        android:textColor="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/selectTimeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nonselecteditem"
+        android:textColor="@color/black"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="@string/select_time"
+        android:layout_below="@id/selectDateButton"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveAppointmentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectTimeButton"
+        android:layout_marginTop="-8dp"
+        android:background="@drawable/btn"
+        android:paddingStart="20dp"
+        android:paddingEnd="30dp"
+        android:text="@string/save_appointment"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

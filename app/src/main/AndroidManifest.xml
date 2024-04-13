@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <permission android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:ignore="ReservedSystemPermission" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +17,9 @@
         android:theme="@style/Theme.Ngoapp"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".RatingAndFeedback"
             android:exported="false" />
         <activity
@@ -26,12 +31,7 @@
         <activity
             android:name=".OurTeam"
             android:exported="false" />
-        <activity
-            android:name=".AdminActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BlogDetails"
-            android:exported="false" />
+
         <activity
             android:name=".KnowMore"
             android:exported="false" />
@@ -52,7 +52,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
