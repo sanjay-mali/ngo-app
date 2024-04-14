@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.ngo_app.R
+import com.example.ngo_app.ViewPagerAdapter
+import com.example.ngo_app.databinding.FragmentEventBinding
 
 class EventFragment : Fragment() {
+
+    lateinit var binding: FragmentEventBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +21,16 @@ class EventFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_event, container, false)
+        binding = FragmentEventBinding.inflate(inflater, container, false)
+
+
+        val viewPager = binding.viewPager
+        viewPager.adapter = ViewPagerAdapter(childFragmentManager)
+
+        val tabLayout = binding.tabLayout
+        tabLayout.setupWithViewPager(viewPager)
+
+
+        return binding.root
     }
 }
