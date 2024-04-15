@@ -1,8 +1,7 @@
-<!-- item_blog.xml -->
+<!-- item_blog_card.xml -->
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/blogCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -11,55 +10,50 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
-            android:id="@+id/blogImage"
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop" />
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/blog_image_description"/>
 
         <TextView
-            android:id="@+id/blogTitle"
+            android:id="@+id/titleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Blog Title"
+            android:textStyle="bold"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:paddingTop="8dp"/>
 
         <TextView
-            android:id="@+id/blogDescription"
+            android:id="@+id/contentTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
+            android:textSize="16sp"
             android:maxLines="3"
             android:ellipsize="end"
-            android:text="Fixed description text. Click Read More to view full content."
-            android:textSize="16sp" />
+            android:paddingTop="8dp"/>
 
         <TextView
-            android:id="@+id/blogDate"
+            android:id="@+id/authorTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Published on: dd MMMM yyyy"
             android:textSize="14sp"
-            android:textColor="@android:color/darker_gray" />
+            android:paddingTop="8dp"/>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/readMoreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:background="@drawable/btn"
-            android:paddingStart="60dp"
-            android:paddingEnd="60dp"
-            android:textColor="@color/white"
             android:text="@string/read_more"
-            android:textAllCaps="false" />
+            android:background="@drawable/btn"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
