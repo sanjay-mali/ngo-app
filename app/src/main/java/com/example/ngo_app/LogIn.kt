@@ -48,7 +48,7 @@ class LogIn : AppCompatActivity() {
             sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
             if (isLoggedIn()) {
-                redirectToHome()
+//                redirectToHome()
             } else {
                 loginUser()
             }
@@ -63,7 +63,6 @@ class LogIn : AppCompatActivity() {
     private fun loginSuccess(email: String) {
         val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         sharedPrefs.edit().putString("email", email).apply()
-        Log.e("email", "email: $email")
 
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
@@ -73,17 +72,17 @@ class LogIn : AppCompatActivity() {
         return sharedPreferences.getBoolean("isLoggedIn", false)
     }
 
-    private fun redirectToHome() {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+//    private fun redirectToHome() {
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+//        finish()
+//    }
 
 
     private fun loginUser() {
         val editor = sharedPreferences.edit()
         editor.putBoolean("isLoggedIn", true)
         editor.apply()
-        redirectToHome()
+//        redirectToHome()
     }
 }
