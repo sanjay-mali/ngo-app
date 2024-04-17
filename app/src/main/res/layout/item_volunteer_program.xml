@@ -1,0 +1,55 @@
+ā<!-- item_volunteer_program.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+
+
+    <ImageView
+        android:id="@+id/programImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/programNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp"/>
+
+    <TextView
+        android:id="@+id/ngoNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/programDetailsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/dateRangeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"/>
+
+
+
+</LinearLayout>

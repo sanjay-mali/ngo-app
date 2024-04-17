@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_āios_24"
+        android:id="@+id/backButton"
+        android:layout_gravity="start"
+        android:layout_marginBottom="26dp"
+        />
+
+
+    <ImageView
+        android:id="@+id/programImageView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/ngo1" />
+
+    <TextView
+        android:id="@+id/programNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/programImageView"
+        android:text="@string/program_name"
+        tools:text="Program Name" />
+
+
+    <TextView
+        android:id="@+id/ngoNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="NGO Name"
+        tools:text="NGO Name"
+        android:layout_below="@id/programNameTextView"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/programDetailsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Program Details"
+        tools:text="Program Details"
+        android:maxLines="3"
+
+        android:layout_below="@id/ngoNameTextView"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/dateRangeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Date Range"
+        tools:text="Date Range"
+        android:layout_below="@id/programDetailsTextView"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_now"
+        android:layout_below="@id/programDetailsTextView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="26dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
+
+
+</RelativeLayout>
