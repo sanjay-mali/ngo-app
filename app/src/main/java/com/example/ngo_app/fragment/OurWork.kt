@@ -22,7 +22,7 @@ class OurWork : Fragment() {
     companion object {
         const val NGO_LOCATION = "com.example.ngo_app.NGO_LOCATION"
         const val NGO_POSITION = "com.example.ngo_app.NGO_POSITION"
-        const val NGO_DESCRIPTION = "com.example.ngo_app.NGO_DESCRIPTION"
+        var NGO_DESCRIPTION = "com.example.ngo_app.NGO_DESCRIPTION"
     }
     private var ngoDescription: String? = null
     private var ngoLocation: String? = null
@@ -41,34 +41,8 @@ class OurWork : Fragment() {
         val description = arguments?.getString("description")
         val position = arguments?.getInt("position")
 
-        // Use the received data as needed
-        binding.ngoLocation.text = location
-        binding.ngoDescription.text = description
-//        binding.textViewPosition.text = position.toString()
-        arguments?.let {
-            ngoDescription = it.getString(NGO_DESCRIPTION)
-            ngoLocation = it.getString(NGO_LOCATION)
-            ngoPosition = it.getInt(NGO_POSITION)
-        }
-//        val ngoDescription = intent.getStringExtra(KnowMore.EXTRA_NGO_DESCRIPTION)
-//        val imageList = ArrayList<SlideModel>()
-//        binding.ngoLocation.text = ngoLocation
-
-        // Inside your fragment where you handle the Know More button click
-
-//        when (sharedViewModel.selectedPosition) {
-//            0 -> {
-//                binding.ngoDescription.text = getString(R.string.ngo1)
-//            }
-//            1 -> {
-//                binding.ngoDescription.text = getString(R.string.ngo2)
-//            }
-//            2 -> {
-//                binding.ngoDescription.text = getString(R.string.ngo3)
-//            }
-//        }
-
-
+        binding.ngoLocation.text = "Ahmedabad"
+        binding.ngoDescription.text = getString(R.string.ngo1)
         return binding.root
     }
 

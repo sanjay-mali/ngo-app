@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 class OurTeam : AppCompatActivity() {
 
     private val teamList = listOf(
-        TeamMember("Sanjay Mali", "Developer", "Experienced Android & Web Developer", R.drawable.ngo1),
-        TeamMember("Misha Joshi", "Designer", "Creative Graphic Designer", R.drawable.ngo2),
-        TeamMember("Kinnari Kapure", "Nullable", "Creative Graphic Designer", R.drawable.ngo3),
-        TeamMember("Mustkim Khokhar", "Designer", "Creative Graphic Designer", R.drawable.ngo2),
+        TeamMember("Name: Sanjay Mali", "Role: Developer", "Bio: Experienced Android & Web Developer"),
+        TeamMember("Name: Misha Joshi", "Role: Designer", "Bio: Creative UI/UX Designer"),
+        TeamMember("Name: Kinnari Kapure", "Role: Developer", "Bio: Web Developer & Designer"),
+        TeamMember("Name: Mustkim Khokhar", "Role: Designer", "Bio: Creative Graphic Designer"),
 
     )
     override fun onCreate(savedInstanceState: Bundle?) {

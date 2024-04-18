@@ -1,11 +1,13 @@
 package com.example.ngo_app
 
 import android.content.Intent
+import android.media.metrics.Event
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.ngo_app.databinding.ActivityFullVolunteerBinding
+import com.example.ngo_app.fragment.EventFragment
 import com.example.ngo_app.fragment.EventLists
 import com.example.ngo_app.fragment.Volunteer
 
@@ -22,10 +24,7 @@ class FullVolunteerActivity : AppCompatActivity() {
         val dateRange = intent.getStringExtra("DATE_RANGE")
         val imageUrl = intent.getStringExtra("IMAGE_URL")
 
-        // Get the position of the NGO in the list
         binding.registerButton.setOnClickListener {
-//            Toast.makeText(this, "Registered for $programName", Toast.LENGTH_SHORT).show()
-
             when (intent.getIntExtra("NGO_POSITION", 0)) {
             0 -> {
 
@@ -34,7 +33,7 @@ class FullVolunteerActivity : AppCompatActivity() {
                 Toast.makeText(this, "PROGram 2 ", Toast.LENGTH_SHORT).show()
 
             }
-            2 -> {ā
+            2 -> {
                 Toast.makeText(this, "PROGram 3 ", Toast.LENGTH_SHORT).show()
 
             }
@@ -42,7 +41,7 @@ class FullVolunteerActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            val intent = Intent(this,EventLists::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

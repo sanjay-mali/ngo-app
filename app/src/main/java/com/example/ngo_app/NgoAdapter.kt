@@ -1,6 +1,7 @@
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContentProviderCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.contentValuesOf
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ngo_app.KnowMore
@@ -72,15 +75,26 @@ class NgoAdapter(private val ngoList: List<NgoModel>) :
 
 
         holder.buttonDonateNow.setOnClickListener {
-            // Handle "Donate Now" button click
+            when(position)
+            {
+                0 -> {
+                    val url = "https://www.friendscarefoundation.org/donations/contributes/"
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    holder.itemView.context.startActivity(browserIntent)
+                }
+                1 -> {
+                    val url = "https://www.omkarfoundationtrust.org/make-a-donation/"
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    holder.itemView.context.startActivity(browserIntent)
+                }
+                2 -> {
+                    val url = "http://manavkartavya.org/campaigns/make-donation/donate/"
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    holder.itemView.context.startActivity(browserIntent)
+                }
+            }
         }
     }
     private lateinit var sharedViewModel: SharedViewModel
-
-//    private fun handleKnowMoreClick(position: Int) {
-//
-//        val intent = Intent(ContentProviderCompat.requireContext(), OurWork::class.java)
-//        ContextCompat.startActivity(intent)
-//    }
     override fun getItemCount() = ngoList.size
 }

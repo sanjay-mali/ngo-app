@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.example.ngo_app.AppointmentLists
 import com.example.ngo_app.DatabaseHelper
 import com.example.ngo_app.OurTeam
+import com.example.ngo_app.R
 import com.example.ngo_app.RatingAndFeedback
 import com.example.ngo_app.Support
 import com.example.ngo_app.TeamMember
@@ -66,6 +68,7 @@ class SettingFragment : Fragment() {
         binding.username.text = fullName
 
 
+        Glide.with(this).load(R.drawable.profile_avatar).into(binding.imageView)
         binding.ourTeams.setOnClickListener{
             val intent = Intent(activity, OurTeam::class.java)
             startActivity(intent)
@@ -82,12 +85,12 @@ class SettingFragment : Fragment() {
         }
 
         binding.rating.setOnClickListener {
-            val intent = Intent(activity,RatingAndFeedback::class.java)
+            val intent = Intent(context,RatingAndFeedback::class.java)
             startActivity(intent)
         }
 
         binding.appointmentBtn.setOnClickListener {
-            val intent = Intent(activity, AppointmentLists::class.java)
+            val intent = Intent(context, AppointmentLists::class.java)
             startActivity(intent)
         }
 

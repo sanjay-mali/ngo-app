@@ -63,18 +63,18 @@
         app:layout_constraintStart_toStartOf="@+id/divider2"
         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/all_transactions"
-        android:layout_width="348dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:fontFamily="@font/itim"
-        android:text="@string/all_transaction"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/editProfileButton"
-        app:layout_constraintStart_toStartOf="@+id/editProfileButton"
-        app:layout_constraintTop_toBottomOf="@+id/editProfileButton" />
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/all_transactions"-->
+<!--        android:layout_width="348dp"-->
+<!--        android:layout_height="59dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:fontFamily="@font/itim"-->
+<!--        android:text="@string/all_transaction"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/editProfileButton"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/editProfileButton"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/editProfileButton" />-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/help"
@@ -85,9 +85,9 @@
         android:fontFamily="@font/itim"
         android:text="@string/help"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/all_transactions"
-        app:layout_constraintStart_toStartOf="@+id/all_transactions"
-        app:layout_constraintTop_toBottomOf="@+id/all_transactions" />
+        app:layout_constraintEnd_toEndOf="@+id/editProfileButton"
+        app:layout_constraintStart_toStartOf="@+id/editProfileButton"
+        app:layout_constraintTop_toBottomOf="@+id/editProfileButton" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/logout"

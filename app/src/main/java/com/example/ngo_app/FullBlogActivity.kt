@@ -1,9 +1,11 @@
 package com.example.ngo_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.example.ngo_app.databinding.ActivityFullBlogBinding
+import com.example.ngo_app.fragment.BlogFragment
 
 class FullBlogActivity : AppCompatActivity() {
 
@@ -20,18 +22,17 @@ class FullBlogActivity : AppCompatActivity() {
         binding = ActivityFullBlogBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve blog item data from intent
         val title = intent.getStringExtra("BLOG_TITLE")
         val imageUrl = intent.getStringExtra("BLOG_IMAGE")
         val content = intent.getStringExtra("BLOG_CONTENT")
 
-        // Populate views with blog item data
+        binding.titleTextView.text = title
+        binding.contentTextView.text = content
+        Glide.with(this).load(imageUrl).into(binding.imageView)
 
-            binding.titleTextView.text = title
-            binding.contentTextView.text = content
-            // Load image using Glide or Picasso library
-            Glide.with(this).load(imageUrl).into(binding.imageView)
-            // Glide.with(this).load(it.imageUrl).into(binding.imageView)
-
+        binding.backButton.setOnClickListener {
+            val intent = Intent(this,BlogFragment::class.java)
+            startActivity(intent)
+        }
     }
 }

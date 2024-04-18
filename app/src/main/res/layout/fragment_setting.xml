@@ -54,16 +54,16 @@
             app:layout_constraintStart_toStartOf="@+id/support"
             app:layout_constraintTop_toBottomOf="@+id/support" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/paymentBtn"
-            android:layout_width="348dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white"
-            android:text="@string/my_payment"
-            app:layout_constraintEnd_toEndOf="@+id/appointmentBtn"
-            app:layout_constraintStart_toStartOf="@+id/appointmentBtn"
-            app:layout_constraintTop_toBottomOf="@+id/appointmentBtn" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/paymentBtn"-->
+<!--            android:layout_width="348dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="@string/my_payment"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/appointmentBtn"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/appointmentBtn"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/appointmentBtn" />-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/rating"
@@ -72,9 +72,9 @@
             android:layout_marginTop="16dp"
             android:background="@color/white"
             android:text="@string/rating_and_feedback"
-            app:layout_constraintEnd_toEndOf="@+id/paymentBtn"
-            app:layout_constraintStart_toStartOf="@+id/paymentBtn"
-            app:layout_constraintTop_toBottomOf="@+id/paymentBtn" />
+            app:layout_constraintEnd_toEndOf="@+id/appointmentBtn"
+            app:layout_constraintStart_toStartOf="@+id/appointmentBtn"
+            app:layout_constraintTop_toBottomOf="@+id/appointmentBtn" />
 
         >
 

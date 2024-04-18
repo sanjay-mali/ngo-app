@@ -42,6 +42,21 @@
             android:name=".WelcomeScreen"
             android:exported="false" />
         <activity
+            android:name=".AppointmentLists"
+            android:exported="false" />
+        <activity
+            android:name=".FullVolunteerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FullBlogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Support"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity2"
             android:exported="true" />
         <activity

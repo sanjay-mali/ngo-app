@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
+import com.bumptech.glide.Glide
 import com.example.ngo_app.databinding.ActivityUserProfileBinding
 import com.example.ngo_app.fragment.SettingFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -26,26 +27,15 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-//        dbHelper = DatabaseHelper(this)
-//        val currentUserEmail = "user@example.com"
-//        val fullName = dbHelper.getFullName(currentUserEmail)
-//        fullName?.let {
-//            // Set the full name to a TextView or any other UI element
-//            binding.usernameInProfile.text = fullName
-//        }
-
-        // Retrieve full name from SharedPreferences
         val sharedPrefs = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
-        // Retrieve the email from SharedPreferences
         val email = sharedPrefs.getString("email", "")
         dbHelper = DatabaseHelper(this)
         val fullName = dbHelper.getFullNameByEmail(email!!)
         binding.usernameInProfile.text = fullName
-// Display the full name in your UI
         binding.usernameInProfile.text = fullName
+        Glide.with(this).load(R.drawable.profile_avatar).into(binding.imageView5)
+
 
         binding.editProfileButton.setOnClickListener{
             val intent = Intent(this, EditProfile::class.java)
@@ -64,6 +54,11 @@ class UserProfile : AppCompatActivity() {
 
         binding.backToSetting.setOnClickListener{
             val intent = Intent(this, SettingFragment::class.java)
+            startActivity(intent)
+        }
+
+        binding.help.setOnClickListener{
+            val intent = Intent(this, Support::class.java)
             startActivity(intent)
         }
 
